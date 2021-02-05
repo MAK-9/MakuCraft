@@ -63,14 +63,52 @@ public class Block
     //Generate all sides of a single cube
     public void RenderBlock()
     {
-        RenderBlockSide(BlockSide.FRONT);
-        RenderBlockSide(BlockSide.BACK);
-        RenderBlockSide(BlockSide.TOP);
-        RenderBlockSide(BlockSide.BOTTOM);
-        RenderBlockSide(BlockSide.LEFT);
-        RenderBlockSide(BlockSide.RIGHT);
+        if (blockType == BlockType.AIR)
+            return;
+        
+        if(HasTransparentNeighbour(BlockSide.FRONT))
+            RenderBlockSide(BlockSide.FRONT);
+        if(HasTransparentNeighbour(BlockSide.BACK))
+            RenderBlockSide(BlockSide.BACK);
+        if(HasTransparentNeighbour(BlockSide.TOP))
+            RenderBlockSide(BlockSide.TOP);
+        if(HasTransparentNeighbour(BlockSide.BOTTOM))
+            RenderBlockSide(BlockSide.BOTTOM);
+        if(HasTransparentNeighbour(BlockSide.LEFT))
+            RenderBlockSide(BlockSide.LEFT);
+        if(HasTransparentNeighbour(BlockSide.RIGHT))
+            RenderBlockSide(BlockSide.RIGHT);
     }
 
+    //check whether surrounding cubes are transparent
+    bool HasTransparentNeighbour(BlockSide blockSide)
+    {
+        Block[,,] chunkBlocks = blockParent.GetComponent<Chunk>().chunkBlocks;
+        Vector3 neighbourPosition = new Vector3(0,0,0);
+
+        if (blockSide == BlockSide.FRONT)
+            neighbourPosition = new Vector3(blockPosition.x, blockPosition.y, blockPosition.z + 1);
+        else if(blockSide == BlockSide.BACK)
+            neighbourPosition = new Vector3(blockPosition.x, blockPosition.y, blockPosition.z - 1);
+        else if(blockSide == BlockSide.TOP)
+            neighbourPosition = new Vector3(blockPosition.x, blockPosition.y + 1, blockPosition.z);
+        else if(blockSide == BlockSide.BOTTOM)
+            neighbourPosition = new Vector3(blockPosition.x, blockPosition.y - 1, blockPosition.z);
+        else if(blockSide == BlockSide.RIGHT)
+            neighbourPosition = new Vector3(blockPosition.x + 1, blockPosition.y, blockPosition.z);
+        else if(blockSide == BlockSide.LEFT)
+            neighbourPosition = new Vector3(blockPosition.x - 1, blockPosition.y, blockPosition.z);
+
+        if (neighbourPosition.x >= 0 && neighbourPosition.x < chunkBlocks.GetLength(0) &&
+            neighbourPosition.y >= 0 && neighbourPosition.y < chunkBlocks.GetLength(1) &&
+            neighbourPosition.z >= 0 && neighbourPosition.z < chunkBlocks.GetLength(2))
+        {
+            return chunkBlocks[(int) neighbourPosition.x, (int) neighbourPosition.y, (int) neighbourPosition.z]
+                .isTransparent;
+        }
+
+        return true;
+    }
     //Render a side
     private void RenderBlockSide(BlockSide side)
     {

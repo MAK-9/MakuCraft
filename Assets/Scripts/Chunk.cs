@@ -25,7 +25,6 @@ public class Chunk : MonoBehaviour
                 }
             }
         }
-        chunkBlocks = new Block[chunkSize, chunkSize, chunkSize];
         for (int z = 0; z < chunkSize; z++)
         {
             for (int y = 0; y < chunkSize; y++)
