@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 131.15268, g: 162.57007, b: 215.2687, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -735,7 +735,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86acf528a2fa4004d9170b6872b615ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockMaterial: {fileID: 2100000, guid: 00380a69261dcfe47b31e8a1e19ca949, type: 2}
+  atlasTextures:
+  - {fileID: 2800000, guid: 4994af918cdb63b43868c28a776cda35, type: 3}
+  - {fileID: 2800000, guid: 829cfb923c071d94f8476556c8513c83, type: 3}
+  - {fileID: 2800000, guid: aad71812f69ad4744b444b065df3aa48, type: 3}
+  - {fileID: 2800000, guid: 39261739d9b8333418e5039eaed3db64, type: 3}
 --- !u!4 &1610514156
 Transform:
   m_ObjectHideFlags: 0
