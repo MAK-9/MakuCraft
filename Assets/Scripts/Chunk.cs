@@ -12,7 +12,7 @@ public class Chunk : MonoBehaviour
     void Start()
     {
         Texture2D atlas = GetTextureAtlas();
-        Material material = new Material(Shader.Find("HDRP/Lit"));
+        Material material = new Material(Shader.Find("Standard"));
         material.mainTexture = atlas;
         blockMaterial = material;
         

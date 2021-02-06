@@ -162,7 +162,7 @@ public class Block
             uvs = new Vector2[4]
             {
                 new Vector2(blockUVCoordinates["grass_side"].x,
-                    blockUVCoordinates[BlockType.DIRT.ToString().ToLower()].y),
+                    blockUVCoordinates["grass_side"].y),
                 new Vector2(
                     blockUVCoordinates["grass_side"].x +
                     blockUVCoordinates["grass_side"].width,
