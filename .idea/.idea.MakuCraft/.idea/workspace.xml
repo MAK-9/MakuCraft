@@ -327,10 +327,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1o72VqtGMdDFFW02gFrj4zUWzSk" />
   <component name="ProjectViewState">
@@ -350,7 +353,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -359,7 +362,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -373,6 +376,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612623337474</updated>
       <workItem from="1612623344747" duration="602000" />
+      <workItem from="1612643262998" duration="3181000" />
     </task>
     <servers />
   </component>
