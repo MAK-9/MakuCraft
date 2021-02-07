@@ -10,6 +10,7 @@ public class World : MonoBehaviour
     private Material blockMaterial;
     public int columnHeight = 16;
     public int chunkSize = 16;
+    public int worldSize = 5;
     
     void Start()
     {
@@ -18,27 +19,33 @@ public class World : MonoBehaviour
         material.mainTexture = atlas;
         this.blockMaterial = material;
 
-        StartCoroutine(BuildChunkColumn());
+        StartCoroutine(BuildWorld());
     }
 
     //Generate a column of chunks
-    IEnumerator BuildChunkColumn()
+    IEnumerator BuildWorld()
     {
-        for (int i = 0; i < columnHeight; i++)
+        for (int x = 0; x < worldSize; x++)
         {
-            Vector3 chunkPosition = new Vector3(this.transform.position.x, i * chunkSize, this.transform.position.z);
-            string chunkName = GenerateChunkName(chunkPosition);
-            Chunk chunk = new Chunk(chunkName,chunkPosition,blockMaterial);
-            chunk.chunkObject.transform.parent = this.transform;
-            chunks.Add(chunkName,chunk);
+            for (int z = 0; z < worldSize; z++)
+            {
+                for (int y = 0; y < columnHeight; y++)
+                {
+                    Vector3 chunkPosition = new Vector3(x * chunkSize, y * chunkSize, z * chunkSize);
+                    string chunkName = GenerateChunkName(chunkPosition);
+                    Chunk chunk = new Chunk(chunkName,chunkPosition,blockMaterial);
+                    chunk.chunkObject.transform.parent = this.transform;
+                    chunks.Add(chunkName,chunk);
+                }
+            }
         }
 
         foreach (KeyValuePair<string, Chunk> chunk in chunks)
         {
             chunk.Value.DrawChunk(chunkSize);
+            
+            yield return null;
         }
-
-        yield return null;
     }
 
     //Generate chunk name based on its position ex.: 0_0_0
