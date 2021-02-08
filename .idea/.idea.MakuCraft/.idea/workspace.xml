@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
     </list>
@@ -19,14 +17,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlockType.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1o72VqtGMdDFFW02gFrj4zUWzSk" />
@@ -73,6 +73,7 @@
       <workItem from="1612643262998" duration="3181000" />
       <workItem from="1612694161564" duration="514000" />
       <workItem from="1612695294800" duration="4171000" />
+      <workItem from="1612779373256" duration="2924000" />
     </task>
     <servers />
   </component>
@@ -91,6 +92,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
