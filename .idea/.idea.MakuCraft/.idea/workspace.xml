@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +25,8 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
@@ -74,6 +77,7 @@
       <workItem from="1612694161564" duration="514000" />
       <workItem from="1612695294800" duration="4171000" />
       <workItem from="1612779373256" duration="2924000" />
+      <workItem from="1612866675841" duration="3175000" />
     </task>
     <servers />
   </component>

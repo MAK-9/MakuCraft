@@ -8,9 +8,7 @@ public class Block
     private BlockType blockType;
     private bool isTransparent;
     private Chunk chunkParent;
-    private GameObject blockParent;
     private Vector3 blockPosition;
-    private Dictionary<string, Rect> blockUVCoordinates;
     
     static Vector3[] forwardVector = new Vector3[]
     {
@@ -129,21 +127,11 @@ public class Block
         vertices[3]
     };
     
-    private Vector2[] uv = new Vector2[4] 
-    {
-        new Vector2(0f, 0f),
-        new Vector2(1f, 0f),
-        new Vector2(0f, 1f),
-        new Vector2(1f, 1f)
-    };
-
-    public Block(BlockType blockType, Chunk chunkParent, Vector3 blockPosition, Dictionary<string, Rect> blockUVCoordinates)
+    public Block(BlockType blockType, Chunk chunkParent, Vector3 blockPosition)
     {
         this.blockType = blockType;
         this.chunkParent = chunkParent;
-        this.blockParent = chunkParent.chunkObject;
         this.blockPosition = blockPosition;
-        this.blockUVCoordinates = blockUVCoordinates;
 
         if (blockType.isTransparent)
         {
@@ -209,7 +197,7 @@ public class Block
         mesh = GenerateBlockSide(mesh, side, uvs);
         GameObject blockSide = new GameObject("block side");
         blockSide.transform.position = blockPosition;
-        blockSide.transform.parent = blockParent.transform;
+        blockSide.transform.parent = chunkParent.chunkObject.transform;
         
         MeshFilter meshFilter = blockSide.AddComponent(typeof(MeshFilter)) as MeshFilter;
         meshFilter.mesh = mesh;
@@ -260,5 +248,10 @@ public class Block
         }
 
         return mesh;
+    }
+
+    public BlockType GetBlockType()
+    {
+        return this.blockType;
     }
 }
