@@ -34,9 +34,22 @@ public class Chunk
                     float worldZ = z + chunkObject.transform.position.z;
                     float generatedY = ChunkUtils.GenerateHeight(worldX,worldZ);
 
-                    if (worldY <= generatedY)
+                    if (worldY == (Mathf.Floor(generatedY)))
                     {
-                        chunkBlocks[x, y, z] = new Block(World.blockTypes[Random.Range(1,4)], this,
+                        // grass layer
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[3], this,
+                            new Vector3(x, y, z));
+                    }
+                    else if (worldY >= generatedY - 16 && worldY < generatedY - 1)
+                    {
+                        // dirt layer
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[1], this,
+                            new Vector3(x, y, z));
+                    }
+                    else if (worldY < generatedY - 16)
+                    {
+                        // stone layer
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[4], this,
                             new Vector3(x, y, z));
                     }
                     else

@@ -6,7 +6,7 @@ public class ChunkUtils
 {
     private static int offset = 0;
     private static int maxHeight = 64;
-    private static float increment = 0.035f;
+    private static float increment = 0.015f;
 
     public static float GenerateHeight(float x, float z)
     {

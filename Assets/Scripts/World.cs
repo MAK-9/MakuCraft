@@ -141,6 +141,7 @@ public class World : MonoBehaviour
 
     void GenerateBlockTypes()
     {
+        // 0
         BlockType air = new BlockType("air", true, true);
         air.sideUV = SetBlockTypeUV("air");
         air.GenerateBlockUVs();
@@ -156,12 +157,19 @@ public class World : MonoBehaviour
         brick.GenerateBlockUVs();
         blockTypes.Add(brick);
         
+        // 3
         BlockType grass = new BlockType("grass", false, false);
         grass.sideUV = SetBlockTypeUV("grass_side");
         grass.topUV = SetBlockTypeUV("grass");
         grass.bottomUV = SetBlockTypeUV("dirt");
         grass.GenerateBlockUVs();
         blockTypes.Add(grass);
+        
+        // 4
+        BlockType stone = new BlockType("stone", false, true);
+        stone.sideUV = SetBlockTypeUV("stone");
+        stone.GenerateBlockUVs();
+        blockTypes.Add(stone);
     }
 
     Vector2[] SetBlockTypeUV(string name)
