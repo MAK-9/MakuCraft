@@ -32,24 +32,30 @@ public class Chunk
                     float worldX = x + chunkObject.transform.position.x;
                     float worldY = y + chunkObject.transform.position.y;
                     float worldZ = z + chunkObject.transform.position.z;
-                    float generatedY = ChunkUtils.GenerateHeight(worldX,worldZ);
+                    float caveProbability = ChunkUtils.CalculateCaveProbability(worldX, worldY, worldZ);
+                    int generated1stLayerY = (int)ChunkUtils.Generate1stLayerHeight(worldX,worldZ);
+                    int generated2ndLayerY =
+                        (int) ChunkUtils.Generate2ndLayerHeight(worldX, worldZ, generated1stLayerY);
 
-                    if (worldY == (Mathf.Floor(generatedY)))
+                    if (worldY == generated1stLayerY)
                     {
                         // grass layer
                         chunkBlocks[x, y, z] = new Block(World.blockTypes[3], this,
                             new Vector3(x, y, z));
                     }
-                    else if (worldY >= generatedY - 16 && worldY < generatedY - 1)
+                    else if (caveProbability > 0.65f && worldY < generated1stLayerY - 5)
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[0], this,
+                            new Vector3(x, y, z));
+                    else if (worldY < generated2ndLayerY)
                     {
                         // dirt layer
-                        chunkBlocks[x, y, z] = new Block(World.blockTypes[1], this,
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[4], this,
                             new Vector3(x, y, z));
                     }
-                    else if (worldY < generatedY - 16)
+                    else if (worldY < generated1stLayerY)
                     {
                         // stone layer
-                        chunkBlocks[x, y, z] = new Block(World.blockTypes[4], this,
+                        chunkBlocks[x, y, z] = new Block(World.blockTypes[1], this,
                             new Vector3(x, y, z));
                     }
                     else

@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class ChunkUtils
 {
-    private static int offset = 0;
+    private static int firstLayerOffset = 0;
+    private static int secondLayerOffset = 0;
+    private static int caveOffset = 0;
     private static int maxHeight = 64;
-    private static float increment = 0.015f;
+    private static float increment = 0.02f;
+    private static float caveIncrement = 0.08f;
 
-    public static float GenerateHeight(float x, float z)
+    public static float Generate1stLayerHeight(float x, float z)
     {
-        float height = PerlinNoise(x * increment + offset,z*increment+offset);
+        float height = PerlinNoise(x * increment + firstLayerOffset,z*increment+firstLayerOffset);
         height = Map(1, maxHeight, 0, 1, height);
         return height;
     }
+    public static float Generate2ndLayerHeight(float x, float z, int maxHeight)
+    {
+        float height = PerlinNoise(x * increment * 5+ secondLayerOffset,z*increment*5+secondLayerOffset);
+        height = Map(1, maxHeight, 0, 1, height);
+        return height;
+    }
+    
 
     static float Map(float from, float to, float from2, float to2, float value)
     {
@@ -30,9 +40,32 @@ public class ChunkUtils
         return height;
     }
 
-    public static int GenerateRandomOffset()
+    public static float CalculateCaveProbability(float x, float y, float z)
     {
-        offset = Random.Range(0, 1000);
-        return offset;
+        x = x * caveIncrement + caveOffset;
+        y = y * caveIncrement + caveOffset;
+        z = z * caveIncrement + caveOffset;
+        
+        return PerlinNoise3D(x, y, z);
+    }
+
+    static float PerlinNoise3D(float x, float y, float z)
+    {
+        float XY = PerlinNoise(x, y);
+        float XZ = PerlinNoise(x, z);
+        float YZ = PerlinNoise(y, z);
+        
+        float YX = PerlinNoise(y, x);
+        float ZX = PerlinNoise(z, x);
+        float ZY = PerlinNoise(z, y);
+
+        return (XY + XZ + YZ + YX + ZX + ZY) / 6f;
+    }
+
+    public static void GenerateRandomOffset()
+    {
+        firstLayerOffset = Random.Range(0, 1000);
+        secondLayerOffset = Random.Range(0, 1000);
+        caveOffset = Random.Range(0, 1000);
     }
 }

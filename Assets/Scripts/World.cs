@@ -16,7 +16,6 @@ public class World : MonoBehaviour
     public int columnHeight = 16;
     public int chunkSize = 16;
     public int worldRadius = 2;
-    private int offset = 0;
 
     private GameObject player;
     private Vector2 lastPlayerPosition;
@@ -38,7 +37,7 @@ public class World : MonoBehaviour
         material.mainTexture = atlas;
         this.blockMaterial = material;
 
-        offset = ChunkUtils.GenerateRandomOffset();
+        ChunkUtils.GenerateRandomOffset();
         GenerateBlockTypes();
         GenerateWorld();
         StartCoroutine(BuildWorld(true));
