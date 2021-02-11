@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="41a34916-d51c-497c-9b08-6bde9c14d548" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MakuCraft/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/brick.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/brick.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/dirt.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/dirt.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/grass.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/grass.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/grass_side.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/grass_side.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/sand.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/sand.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/snow.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/snow.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/stone.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/stone.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/water.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/water.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +30,10 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChunkUtils.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
     </changedPaths>
   </component>
@@ -76,6 +85,7 @@
       <workItem from="1612866675841" duration="3175000" />
       <workItem from="1612904574015" duration="1724000" />
       <workItem from="1612951905604" duration="1410000" />
+      <workItem from="1613039649208" duration="821000" />
     </task>
     <servers />
   </component>
