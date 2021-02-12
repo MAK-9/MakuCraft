@@ -142,7 +142,7 @@ public class Block
     //Generate all sides of a single cube
     public void RenderBlock()
     {
-        if (blockType.name == "air")
+        if (blockType.isTransparent)
             return;
         
         if(HasTransparentNeighbour(BlockSide.FRONT))

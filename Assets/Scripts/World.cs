@@ -14,7 +14,7 @@ public class World : MonoBehaviour
     public static Dictionary<string, Chunk> chunks = new Dictionary<string, Chunk>();
     private Material blockMaterial;
     public int columnHeight = 16;
-    public int chunkSize = 16;
+    public static int chunkSize = 16;
     public int worldRadius = 2;
 
     private GameObject player;
@@ -140,11 +140,15 @@ public class World : MonoBehaviour
 
     void GenerateBlockTypes()
     {
-        // 0
         BlockType air = new BlockType("air", true, true);
-        air.sideUV = SetBlockTypeUV("air");
+        air.sideUV = SetBlockTypeUV();
         air.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.AIR, air);
+        
+        BlockType cave = new BlockType("cave", true, true);
+        cave.sideUV = SetBlockTypeUV();
+        cave.GenerateBlockUVs();
+        blockTypes.Add(BlockType.Type.CAVE, cave);
         
         BlockType dirt = new BlockType("dirt", false, true);
         dirt.sideUV = SetBlockTypeUV("dirt");
@@ -156,7 +160,6 @@ public class World : MonoBehaviour
         brick.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.BRICK,brick);
         
-        // 3
         BlockType grass = new BlockType("grass", false, false);
         grass.sideUV = SetBlockTypeUV("grass_side");
         grass.topUV = SetBlockTypeUV("grass");
@@ -164,28 +167,35 @@ public class World : MonoBehaviour
         grass.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.GRASS,grass);
         
-        // 4
         BlockType stone = new BlockType("stone", false, true);
         stone.sideUV = SetBlockTypeUV("stone");
         stone.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.STONE,stone);
         
-        // 5
         BlockType carbon = new BlockType("carbon", false, true);
         carbon.sideUV = SetBlockTypeUV("carbon");
         carbon.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.CARBON,carbon);
         
-        // 6
         BlockType diamond = new BlockType("diamond", false, true);
         diamond.sideUV = SetBlockTypeUV("diamond");
         diamond.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.DIAMOND,diamond);
+        
+        BlockType snow = new BlockType("snow", false, true);
+        snow.sideUV = SetBlockTypeUV("snow");
+        snow.GenerateBlockUVs();
+        blockTypes.Add(BlockType.Type.SNOW,snow);
+        
+        BlockType sand = new BlockType("sand", false, true);
+        sand.sideUV = SetBlockTypeUV("sand");
+        sand.GenerateBlockUVs();
+        blockTypes.Add(BlockType.Type.SAND,sand);
     }
 
-    Vector2[] SetBlockTypeUV(string name)
+    Vector2[] SetBlockTypeUV(string name = null)
     {
-        if (name == "air")
+        if (name == null)
         {
             return new Vector2[4] 
             {

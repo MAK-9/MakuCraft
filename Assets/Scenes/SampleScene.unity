@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d5bcb36dbda63c443bea84c3eb6c1506, type: 2}
   m_LightingSettings: {fileID: 1152443887}
 --- !u!196 &4
 NavMeshSettings:
@@ -382,7 +382,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ac82b85808ed0854b92c156ab4f42946, type: 3}
   - {fileID: 2800000, guid: 309452133cddbfe4eac2d5cf00b39934, type: 3}
   columnHeight: 4
-  chunkSize: 16
   worldRadius: 2
 --- !u!4 &1262195062
 Transform:
