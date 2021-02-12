@@ -10,48 +10,6 @@ public class Block
     private Chunk chunkParent;
     private Vector3 blockPosition;
     
-    static Vector3[] forwardVector = new Vector3[]
-    {
-        Vector3.forward,
-        Vector3.forward,
-        Vector3.forward,
-        Vector3.forward
-    };
-    static Vector3[] backVector = new Vector3[]
-    {
-        Vector3.back,
-        Vector3.back,
-        Vector3.back,
-        Vector3.back
-    };
-    static Vector3[] leftVector = new Vector3[]
-    {
-        Vector3.left,
-        Vector3.left,
-        Vector3.left,
-        Vector3.left
-    };
-    static Vector3[] rightVector = new Vector3[]
-    {
-        Vector3.right,
-        Vector3.right,
-        Vector3.right,
-        Vector3.right
-    };
-    static Vector3[] upVector = new Vector3[]
-    {
-        Vector3.up,
-        Vector3.up,
-        Vector3.up,
-        Vector3.up
-    };
-    static Vector3[] downVector = new Vector3[]
-    {
-        Vector3.down,
-        Vector3.down,
-        Vector3.down,
-        Vector3.down
-    };
     static int[] triangles = new int[]
     {
         3,
@@ -146,17 +104,17 @@ public class Block
             return;
         
         if(HasTransparentNeighbour(BlockSide.FRONT))
-            RenderBlockSide(BlockSide.FRONT);
+            GenerateBlockSide(BlockSide.FRONT);
         if(HasTransparentNeighbour(BlockSide.BACK))
-            RenderBlockSide(BlockSide.BACK);
+            GenerateBlockSide(BlockSide.BACK);
         if(HasTransparentNeighbour(BlockSide.TOP))
-            RenderBlockSide(BlockSide.TOP);
+            GenerateBlockSide(BlockSide.TOP);
         if(HasTransparentNeighbour(BlockSide.BOTTOM))
-            RenderBlockSide(BlockSide.BOTTOM);
+            GenerateBlockSide(BlockSide.BOTTOM);
         if(HasTransparentNeighbour(BlockSide.LEFT))
-            RenderBlockSide(BlockSide.LEFT);
+            GenerateBlockSide(BlockSide.LEFT);
         if(HasTransparentNeighbour(BlockSide.RIGHT))
-            RenderBlockSide(BlockSide.RIGHT);
+            GenerateBlockSide(BlockSide.RIGHT);
     }
 
     //check whether surrounding cubes are transparent
@@ -188,66 +146,60 @@ public class Block
 
         return true;
     }
-    //Render a side
-    private void RenderBlockSide(BlockSide side)
-    {
-        Vector2[] uvs = blockType.GetUV(side);
-        
-        Mesh mesh = new Mesh();
-        mesh = GenerateBlockSide(mesh, side, uvs);
-        GameObject blockSide = new GameObject("block side");
-        blockSide.transform.position = blockPosition;
-        blockSide.transform.parent = chunkParent.chunkObject.transform;
-        
-        MeshFilter meshFilter = blockSide.AddComponent(typeof(MeshFilter)) as MeshFilter;
-        meshFilter.mesh = mesh;
-    }
-
-    
+   
     //Generate mesh depending on which side is chosen
-    Mesh GenerateBlockSide(Mesh mesh, BlockSide side, Vector2[] uv)
+    void GenerateBlockSide(BlockSide side)
     {
         switch (side)
         {
             case BlockSide.FRONT:
-                mesh.vertices = frontVertices;
-                mesh.normals = forwardVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in frontVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
             case BlockSide.BACK:
-                mesh.vertices = backVertices;
-                mesh.normals = backVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in backVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
             case BlockSide.LEFT:
-                mesh.vertices = leftVertices;
-                mesh.normals = leftVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in leftVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
             case BlockSide.RIGHT:
-                mesh.vertices = rightVertices;
-                mesh.normals = rightVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in rightVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
             case BlockSide.TOP:
-                mesh.vertices = topVertices;
-                mesh.normals = upVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in topVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
             case BlockSide.BOTTOM:
-                mesh.vertices = bottomVertices;
-                mesh.normals = downVector;
-                mesh.uv = blockType.GetBlockUVs(side);
-                mesh.triangles = triangles;
+                foreach (Vector3 vertex in bottomVertices)
+                {
+                    chunkParent.vertices.Add(blockPosition+vertex);
+                }
                 break;
         }
 
-        return mesh;
+        foreach (Vector2 blockUV in blockType.GetBlockUVs(side))
+        {
+            chunkParent.uvs.Add(blockUV);
+        }
+        foreach (int triangle in triangles)
+        {
+            chunkParent.triangles.Add(chunkParent.vertexIndex+triangle);
+        }
+
+        chunkParent.vertexIndex += 4;
     }
 
     public BlockType GetBlockType()
