@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 public class Block
 {
     private BlockType blockType;
-    private bool isTransparent;
     private Chunk chunkParent;
     private Vector3 blockPosition;
     
@@ -90,12 +89,6 @@ public class Block
         this.blockType = blockType;
         this.chunkParent = chunkParent;
         this.blockPosition = blockPosition;
-
-        if (blockType.isTransparent)
-        {
-            isTransparent = true;
-        }
-        else isTransparent = false;
     }
     //Generate all sides of a single cube
     public void RenderBlock()
@@ -141,7 +134,8 @@ public class Block
             neighbourPosition.z >= 0 && neighbourPosition.z < chunkBlocks.GetLength(2))
         {
             return chunkBlocks[(int) neighbourPosition.x, (int) neighbourPosition.y, (int) neighbourPosition.z]
-                .isTransparent;
+                .blockType.isTransparent || chunkBlocks[(int) neighbourPosition.x, (int) neighbourPosition.y, (int) neighbourPosition.z]
+                .blockType.isTranslucent;
         }
 
         return true;
@@ -196,7 +190,10 @@ public class Block
         }
         foreach (int triangle in triangles)
         {
-            chunkParent.triangles.Add(chunkParent.vertexIndex+triangle);
+            if(this.blockType.isTransparent || this.blockType.isTranslucent)
+                chunkParent.transparentTriangles.Add(chunkParent.vertexIndex+triangle);
+            else 
+                chunkParent.triangles.Add(chunkParent.vertexIndex + triangle);
         }
 
         chunkParent.vertexIndex += 4;
