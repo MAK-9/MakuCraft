@@ -125,9 +125,9 @@ public class World : MonoBehaviour
     }
 
     //Generate chunk name based on its position ex.: 0_0_0
-    string GenerateChunkName(Vector3 chunkPosition)
+    public static string GenerateChunkName(Vector3 chunkPosition)
     {
-        return (int) chunkPosition.x + "_" + (int) chunkPosition.y + "_" + (int) chunkPosition.z;
+        return chunkPosition.x + "_" + chunkPosition.y + "_" + chunkPosition.z;
     }
     
     //Generate texture atlas
@@ -153,9 +153,14 @@ public class World : MonoBehaviour
         blockTypes.Add(BlockType.Type.AIR, air);
         
         BlockType glass = new BlockType("glass", false, true, true);
-        glass.sideUV = SetBlockTypeUV();
+        glass.sideUV = SetBlockTypeUV("glass");
         glass.GenerateBlockUVs();
         blockTypes.Add(BlockType.Type.GLASS, glass);
+        
+        BlockType water = new BlockType("water", false, true, true);
+        water.sideUV = SetBlockTypeUV("water");
+        water.GenerateBlockUVs();
+        blockTypes.Add(BlockType.Type.WATER, water);
         
         BlockType cave = new BlockType("cave", true,true, true);
         cave.sideUV = SetBlockTypeUV();
