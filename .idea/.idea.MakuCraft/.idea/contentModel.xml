@@ -19,6 +19,7 @@
           <e p="BlockType.cs" t="Include" />
           <e p="Chunk.cs" t="Include" />
           <e p="ChunkUtils.cs" t="Include" />
+          <e p="Raycaster.cs" t="Include" />
           <e p="World.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
