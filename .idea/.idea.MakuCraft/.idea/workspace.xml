@@ -17,17 +17,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Biome.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/BlockType.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Biome.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Biomes/DesertBiome.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Raycaster.cs" />
-    </changedPaths>
-  </component>
   <component name="ProjectId" id="1o72VqtGMdDFFW02gFrj4zUWzSk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,12 +31,20 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/build\MakuCraft.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\13mic\OneDrive\Documents\GitHub\MakuCraft\build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -56,7 +53,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -84,6 +81,7 @@
       <workItem from="1613404247338" duration="179000" />
       <workItem from="1613404513736" duration="2716000" />
       <workItem from="1613495100533" duration="824000" />
+      <workItem from="1614526029233" duration="43000" />
     </task>
     <servers />
   </component>
