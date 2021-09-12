@@ -1,5 +1,5 @@
 # MakuCraft
-A prototype of a procedurally generated terrain
+A prototype of a procedurally generated terrain using Perlin noise
 
 
 ![image](https://user-images.githubusercontent.com/70964650/132999421-6b076dbc-94f8-40cf-9e1c-3ffa9084d178.png)
